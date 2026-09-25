@@ -1,0 +1,1008 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Field Kit</title><style>:root {
+  --ink: #1d2126;
+  --ink-soft: #4a515b;
+  --muted: #8a8f98;
+  --line: #dfe2e6;
+  --paper: #ffffff;
+  --tint: #f4f6f5;
+  --accent: #0f5e5a;
+  --accent-soft: #e5f0ee;
+  --warm: #c6613f;
+  --warm-soft: #fbeee8;
+  --sans: "Liberation Sans", Arial, Helvetica, sans-serif;
+  --serif: "Liberation Serif", "DejaVu Serif", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--serif); font-size: 11.4pt; line-height: 1.55; }
+
+/* Cover */
+.cover-doc { margin: 0; }
+.cover { width: 8.5in; height: 11in; background: #14181c; color: #f3f1ea; padding: 0.8in 0.85in; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.cover::after { content: ""; position: absolute; right: -1.6in; top: 2.2in; width: 5in; height: 5in; border-radius: 50%; border: 2px solid rgba(198,97,63,.55); }
+.cover::before { content: ""; position: absolute; right: -0.6in; top: 3.2in; width: 3in; height: 3in; border-radius: 50%; background: rgba(15,94,90,.55); }
+.cover-top { font-family: var(--sans); letter-spacing: .32em; font-size: 10pt; color: #b9c3c1; position: relative; z-index: 2; }
+.cover-main { position: relative; z-index: 2; max-width: 5.6in; }
+.cover-badge { display: inline-block; font-family: var(--sans); font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; border: 1px solid #c6613f; color: #f0b9a4; padding: 5px 10px; border-radius: 3px; margin-bottom: 26px; }
+.cover-title { font-family: var(--sans); font-weight: 700; font-size: 54pt; line-height: 1.02; letter-spacing: -.02em; }
+.cover-rule { width: 70px; height: 5px; background: var(--warm); margin: 26px 0 22px; }
+.cover-sub { font-family: var(--serif); font-size: 16pt; line-height: 1.4; color: #d9dcd6; }
+.cover-bottom { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 2; }
+.cover-author { font-family: var(--sans); font-size: 15pt; font-weight: 700; }
+.cover-author span { display: block; font-weight: 400; font-size: 10pt; color: #aab3b1; margin-top: 4px; }
+.cover-qr { text-align: center; font-family: var(--sans); font-size: 8pt; color: #aab3b1; }
+.cover-qr .qr { width: 1.05in; height: 1.05in; background: #fff; padding: 4px; border-radius: 4px; display: block; margin-bottom: 5px; }
+
+/* TOC */
+.toc { page-break-after: always; }
+.toc h2 { font-family: var(--sans); font-size: 26pt; margin: 0 0 18px; }
+.toc ol { list-style: none; padding: 0; margin: 0; column-count: 1; }
+.toc li { font-family: var(--sans); font-size: 10.5pt; padding: 5px 0; border-bottom: 1px solid var(--line); }
+.toc a { color: var(--ink); text-decoration: none; }
+
+/* Sections */
+section.chapter, section.frontmatter { page-break-before: always; }
+main > section:first-child { page-break-before: auto; }
+.part { font-family: var(--sans); font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; color: var(--warm); margin: 0 0 6px; }
+h1 { font-family: var(--sans); font-size: 25pt; line-height: 1.12; letter-spacing: -.01em; margin: 0 0 14px; color: var(--ink); }
+h2 { font-family: var(--sans); font-size: 15pt; margin: 26px 0 8px; color: var(--accent); page-break-after: avoid; }
+h3 { font-family: var(--sans); font-size: 12pt; margin: 18px 0 6px; page-break-after: avoid; }
+p { margin: 0 0 10px; orphans: 3; widows: 3; }
+a { color: var(--accent); }
+.lede { font-family: var(--serif); font-style: italic; font-size: 14pt; color: var(--ink-soft); border-left: 4px solid var(--warm); padding: 2px 0 2px 14px; margin: 0 0 22px; }
+ul, ol { margin: 0 0 12px; padding-left: 22px; }
+li { margin-bottom: 4px; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
+blockquote { margin: 12px 0; padding: 10px 16px; background: var(--tint); border-left: 3px solid var(--accent); font-style: italic; }
+blockquote p:last-child { margin: 0; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-family: var(--sans); font-size: 9pt; line-height: 1.4; page-break-inside: auto; }
+tr { page-break-inside: avoid; }
+th { background: var(--accent); color: #fff; text-align: left; padding: 6px 8px; font-weight: 700; }
+td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:nth-child(even) td { background: #fafbfb; }
+.table-caption { font-family: var(--sans); font-weight: 700; font-size: 10pt; margin-top: 16px; color: var(--accent); }
+
+/* DM threads */
+.thread { background: #f3f5f8; border-radius: 10px; padding: 12px 16px; margin: 14px 0 10px; font-family: var(--sans); font-size: 10pt; line-height: 1.5; page-break-inside: avoid; border: 1px solid #e3e7ec; }
+.thread p { margin: 0 0 8px; }
+.thread p:last-child { margin-bottom: 0; }
+.thread strong { color: var(--accent); }
+
+/* Annotation tables */
+.annot { page-break-inside: avoid; margin: 0 0 18px; }
+.annot table { margin: 0; font-size: 8.8pt; }
+.annot th { background: #33404a; }
+.annot td:first-child { width: 30%; font-weight: 700; color: var(--ink-soft); }
+
+/* Boxes */
+.rule { margin: 26px 0 6px; padding: 14px 18px; background: var(--ink); color: #fff; font-family: var(--sans); font-weight: 700; font-size: 11.5pt; border-radius: 6px; page-break-inside: avoid; }
+.gate-rule { margin: 8px 0 18px; padding: 8px 12px; background: var(--accent-soft); color: var(--accent); font-family: var(--sans); font-weight: 700; font-size: 10pt; border-radius: 4px; }
+.sidebar { background: var(--warm-soft); border: 1px solid #f0cdbd; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 10.5pt; page-break-inside: avoid; }
+.sidebar p:first-child strong { font-family: var(--sans); color: var(--warm); }
+.example { background: var(--tint); border-left: 4px solid var(--accent); padding: 12px 16px; margin: 14px 0; font-size: 10.5pt; page-break-inside: avoid; }
+.example p:last-child, .sidebar p:last-child { margin-bottom: 0; }
+.fig { font-family: var(--sans); font-size: 8.5pt; color: var(--muted); margin: 6px 0 18px; text-align: center; }
+
+/* Diagrams */
+.flow { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: center; margin: 16px 0 4px; page-break-inside: avoid; }
+.flow span { position: relative; font-family: var(--sans); font-size: 9pt; background: var(--accent-soft); border: 1px solid #b9d6d2; color: var(--ink); padding: 8px 10px; border-radius: 6px; text-align: center; min-width: 1.1in; }
+.flow span:not(:last-child)::after { content: "→"; position: absolute; right: -17px; top: 50%; transform: translateY(-50%); color: var(--warm); font-weight: 700; }
+.flow.loop span { background: var(--warm-soft); border-color: #f0cdbd; }
+.flow.loop span:last-child::after { content: "↺"; position: absolute; right: -18px; top: 50%; transform: translateY(-50%); color: var(--warm); font-weight: 700; }
+.system-map { margin: 14px 0 4px; page-break-inside: avoid; }
+.sm-row { display: flex; gap: 8px; margin-bottom: 8px; }
+.sm-box { flex: 1; font-family: var(--sans); font-size: 9pt; background: var(--accent-soft); border: 1px solid #b9d6d2; border-radius: 6px; padding: 10px; text-align: center; }
+.sm-box b { color: var(--accent); font-size: 10pt; }
+.sm-wide { background: #1d2126; color: #eef1ee; border-color: #1d2126; }
+.sm-wide b { color: #f0b9a4; }
+.sm-sub { color: #b8c2c0; font-size: 8.5pt; }
+.gates { display: flex; gap: 6px; margin: 14px 0 4px; page-break-inside: avoid; }
+.gate { flex: 1; font-family: var(--sans); background: var(--accent); color: #fff; border-radius: 6px; padding: 10px 7px; font-size: 8pt; text-align: center; }
+.gate:nth-child(2) { background: #16706b; } .gate:nth-child(3) { background: #1f817b; } .gate:nth-child(4) { background: #b3583a; } .gate:nth-child(5) { background: #c6613f; } .gate:nth-child(6) { background: #1d2126; }
+.gate b { display: block; font-size: 9pt; margin-bottom: 4px; }
+.gate span { opacity: .92; }
+.equation { border: 2px solid var(--accent); border-radius: 10px; padding: 14px; margin: 12px 0 4px; page-break-inside: avoid; }
+.eq-main { font-family: var(--sans); font-size: 16pt; font-weight: 700; text-align: center; margin-bottom: 12px; }
+.eq-main span { color: var(--warm); }
+.eq-parts { display: flex; gap: 8px; }
+.eq-parts div { flex: 1; font-family: var(--sans); font-size: 9pt; background: var(--tint); border-radius: 6px; padding: 8px; text-align: center; }
+.risk-grid { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 12px 0 4px; }
+.risk-grid span { font-family: var(--sans); font-size: 8.5pt; background: var(--warm-soft); border: 1px solid #f0cdbd; padding: 4px 9px; border-radius: 20px; }
+.graph-fig { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0 4px; page-break-inside: avoid; }
+.g-node { font-family: var(--sans); font-size: 9pt; text-align: center; border-radius: 40px; padding: 10px; background: var(--accent-soft); border: 1px solid #b9d6d2; }
+.g-node small { color: var(--ink-soft); }
+.g-hot { background: #fde3d8; border-color: #eba88f; } .g-cool { background: #eef1f4; border-color: #cfd6dd; } .g-stop { background: #1d2126; color: #fff; } .g-stop small { color: #c7ccd1; }
+.trust-loop { display: flex; gap: 6px; margin: 14px 0 4px; page-break-inside: avoid; }
+.trust-loop div { flex: 1; font-family: var(--sans); font-size: 8.5pt; background: var(--tint); border-top: 4px solid var(--warm); border-radius: 4px; padding: 8px; }
+.trust-loop b { font-size: 16pt; color: var(--warm); }
+.trust-loop span { display: block; color: var(--ink-soft); margin-top: 4px; }
+.moves { display: flex; gap: 6px; margin: 12px 0 4px; }
+.moves div { flex: 1; font-family: var(--sans); font-size: 8.5pt; text-align: center; background: var(--ink); color: #fff; border-radius: 6px; padding: 10px 6px; }
+.moves b { display: block; color: #f0b9a4; font-size: 10pt; margin-bottom: 3px; }
+.ladder { margin: 14px auto 4px; max-width: 5.2in; page-break-inside: avoid; }
+.ladder div { display: flex; justify-content: space-between; font-family: var(--sans); font-size: 9pt; padding: 7px 12px; margin-bottom: 4px; border-radius: 4px; color: #fff; }
+.ladder div:nth-child(1) { background: #1d2126; margin-left: 0; } .ladder div:nth-child(2) { background: #0f5e5a; margin-left: 4%; } .ladder div:nth-child(3) { background: #16706b; margin-left: 8%; } .ladder div:nth-child(4) { background: #c6613f; margin-left: 12%; } .ladder div:nth-child(5) { background: #d98a6c; margin-left: 16%; } .ladder div:nth-child(6) { background: #b8bfc6; margin-left: 20%; color: var(--ink); }
+.ladder span { font-style: italic; opacity: .95; }
+.nested { border: 2px solid var(--accent); border-radius: 10px; padding: 12px 14px; font-family: var(--sans); font-size: 10pt; text-align: center; page-break-inside: avoid; }
+.nested .inner { background: var(--warm); color: #fff; padding: 2px 8px; border-radius: 4px; }
+.inner-note { font-size: 8.5pt; color: var(--ink-soft); margin-top: 6px; }
+.sprint { display: flex; gap: 6px; margin: 14px 0 4px; }
+.sprint div { flex: 1; font-family: var(--sans); font-size: 8.5pt; padding: 9px; border-radius: 6px; background: var(--accent-soft); border: 1px solid #b9d6d2; }
+.sprint div:last-child { background: var(--warm-soft); border-color: #f0cdbd; }
+.sprint b { display: block; color: var(--accent); margin-bottom: 3px; }
+
+/* CTA */
+.cta-grid { display: flex; gap: 28px; align-items: flex-start; }
+.cta-text { flex: 1; }
+.cta-qr { width: 2in; text-align: center; font-family: var(--sans); font-size: 9pt; color: var(--ink-soft); }
+.cta-qr .qr { width: 1.8in; height: 1.8in; border: 1px solid var(--line); border-radius: 8px; padding: 6px; }
+.cta-banner { display: flex; gap: 18px; align-items: center; background: var(--ink); color: #fff; border-radius: 10px; padding: 16px 20px; margin: 22px 0; page-break-inside: avoid; }
+.cta-banner a { color: #f0b9a4; }
+.cta-banner .qr { width: 1.1in; height: 1.1in; background: #fff; border-radius: 6px; padding: 4px; flex: none; }
+.cta-banner p { margin: 0 0 6px; font-family: var(--sans); font-size: 10pt; }
+.cta-banner strong { color: #f0b9a4; }
+
+/* Appendix & worksheets */
+.appendix h1 { font-size: 20pt; }
+.appendix table { font-size: 8.8pt; }
+.appendix td { height: 22px; }
+.notes { font-size: 9.5pt; }
+.stat-row { display: flex; gap: 10px; margin: 16px 0; page-break-inside: avoid; }
+.stat { flex: 1; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 6px; padding: 12px; font-family: var(--sans); }
+.stat b { display: block; font-size: 22pt; color: var(--ink); line-height: 1.1; }
+.stat span { font-size: 8.5pt; color: var(--ink-soft); }
+.stat.warm { border-top-color: var(--warm); }
+</style></head><body><main><section class="chapter appendix"><p class="part">Field Kit · Before the Inbox</p>
+
+<h1 id="worksheet-1-the-five-sentence-offer-brief">Worksheet 1: The Five-Sentence Offer Brief</h1>
+<p>Complete once per offer. Revise it after every ten real conversations (Chapter 0).</p>
+<table>
+<thead>
+<tr>
+<th>Sentence</th>
+<th>Job</th>
+<th>Your version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Buyer</strong></td>
+<td>Who, in what buying situation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Problem</strong></td>
+<td>An observable difficulty, in buyer language</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Change</strong></td>
+<td>What your work is meant to improve</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Delivery</strong></td>
+<td>What you actually build or deliver</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Boundary</strong></td>
+<td>When it's not the right fit</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Price</strong></td>
+<td>Fee or range, currency, one-time or recurring</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Proof</strong></td>
+<td>Evidence you can show, with its period and your contribution</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>What I can't promise</strong></td>
+<td>Outcomes that depend on the buyer or the market</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Explain-it-back test:</strong> a peer's version of my offer: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</p></section>
+<section class="chapter appendix"><h1 id="worksheet-2-five-minute-research-cards">Worksheet 2: Five-Minute Research Cards</h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Prospect 1</th>
+<th>Prospect 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name, role, company</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Source + date I actually reviewed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Exact observation</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Possible implication (tentative)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Why my work might be relevant</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>One question that could disprove it</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Fit: clear / possible / absent</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Context: explicit / relevant / weak</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Access: relationship / intro / new</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Prior contact, permission or stop condition</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>"I chose this person because…"</strong> 1: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__ 2: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p></section>
+<section class="chapter appendix"><h1 id="worksheet-3-the-send-check-pause-test">Worksheet 3: The Send Check + Pause Test</h1>
+<p><strong>Before any message:</strong></p>
+<ul>
+<li>☐ Correct person, current role.</li>
+<li>☐ The observation is accurate and actually relevant.</li>
+<li>☐ No unsupported claim about their problem or results.</li>
+<li>☐ My reason for speaking is clear and commercially honest.</li>
+<li>☐ One primary trust job, one main question or request.</li>
+<li>☐ Unnecessary praise, jargon and padding removed.</li>
+<li>☐ Any link is relevant, working and genuinely included.</li>
+<li>☐ The relationship supports this message; no stop instruction.</li>
+<li>☐ <strong>Screenshot Test:</strong> I'd be comfortable if they posted this publicly.</li>
+</ul>
+<p><strong>The Pause Test:</strong> Am I sending this because it helps the buyer, or because I'm uncomfortable with the silence?</p>
+<ul>
+<li>☐ Not trying to rush a gate</li>
+<li>☐ Not relieving my own uncertainty</li>
+<li>☐ Not adding "value" out of fear they won't respond</li>
+<li>☐ Not asking for a call because I don't know what else to say</li>
+<li>☐ Following the buyer's signal, not my sequence</li>
+<li>☐ Not answering an objection they haven't raised</li>
+<li>☐ Not creating urgency that doesn't exist</li>
+</ul>
+<p><em>If a factual or permission check fails, don't send. Better wording doesn't fix a false premise. And if they asked you a direct question, answer it.</em></p></section>
+<section class="chapter appendix"><h1 id="worksheet-4-the-daily-os-card">Worksheet 4: The Daily OS Card</h1>
+<p><strong>Scan → Sort → Diagnose → Choose → Move → Record → Rehydrate</strong> · 30–45 min · never a sending quota</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>My promises due</th>
+<th>Replies needing judgment</th>
+<th>Moves made (incl. pauses)</th>
+<th>Records updated</th>
+<th>Rehydrations (with trigger)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>TRUST Loop, per thread:</strong> <strong>T</strong>rack the state · <strong>R</strong>ecognize the gate · <strong>U</strong>nderstand the risk · <strong>S</strong>ignal the missing belief · <strong>T</strong>ake one step</p></section>
+<section class="chapter appendix"><h1 id="appendix-a-the-trust-debugger">Appendix A: The Trust Debugger</h1>
+<p>Use the full Debugger on significant, stalled or confusing threads. For routine exchanges, the short version is enough: <strong>evidence → open question → move → stop condition.</strong> Never delay a straightforward answer to fill in a worksheet.</p>
+<p><strong>Thread / date:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_ <strong>Exact last buyer signal:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>What does the buyer believe right now? (evidence, not mind-reading)</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>What don't they believe or understand yet?</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>What are they protecting? (time, money, reputation, capacity…)</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Which gate is open? (write the question, not just the number)</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>What's their likely posture, and one alternative reading?</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>P(outcome): strong / weak / unknown, and why</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>What value is relevant, in their words?</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>What perceived risk or hard constraint is present?</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Last trust deposit?</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Last trust withdrawal?</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>What signal is missing?</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Smallest appropriate move (including pause, decline, stop)?</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>What should I NOT do?</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The Pause Test:</strong> Am I sending this because it helps the buyer, or because I'm uncomfortable with the silence?</p>
+<p><strong>What response would change my diagnosis?</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</p>
+<div class="example">
+<p><strong>Completed example.</strong> A buyer says the service looks useful but asks whether their team must attend weekly sessions. Earlier, they mentioned a major launch. <em>Evidence supports:</em> interest plus a concern about participation. <em>Does not establish:</em> fear of investing, or a price objection. <em>Gate:</em> G4 (what does this require of us?). <em>TU:</em> Value strong; P(outcome) unknown; Risk weak (capacity). <em>Missing signal:</em> an honest participation schedule. <em>Move:</em> Clarifier, then a timing decision if needed. <em>Do NOT:</em> send another testimonial or promise it'll be effortless.</p>
+</div></section>
+<section class="chapter appendix"><h1 id="appendix-b-six-gate-reference-sheet">Appendix B: Six Gate Reference Sheet</h1>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Buyer's question</th>
+<th>Signals</th>
+<th>Increases trust</th>
+<th>Decreases trust</th>
+<th>First moves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>G1 Reality</strong></td>
+<td>Is this person real and coherent?</td>
+<td>"Do we know each other?" Profile check</td>
+<td>Accurate identity, truthful context, coherent profile</td>
+<td>Fake familiarity, vague affiliation, profile contradiction</td>
+<td>Clarifier, Self-Disclosure</td>
+</tr>
+<tr>
+<td><strong>G2 Relevance</strong></td>
+<td>Does this matter to me?</td>
+<td>"Why are you asking?" "Not my area"</td>
+<td>Specific observation; a question that can be answered "no"</td>
+<td>Diagnosing from a job title</td>
+<td>Clarifier, Insight Gift</td>
+</tr>
+<tr>
+<td><strong>G3 Fit</strong></td>
+<td>Do they understand my situation?</td>
+<td>Corrections, "we're different"</td>
+<td>Accurate recap, meaningful distinction</td>
+<td>Forcing a standard diagnosis</td>
+<td>Mirror, Clarifier</td>
+</tr>
+<tr>
+<td><strong>G4 Safety</strong></td>
+<td>Is it safe to explore?</td>
+<td>"What would you need from us?"</td>
+<td>Clear time, inputs, boundaries, exit</td>
+<td>Surprise commitments, reassurance adjectives</td>
+<td>Clarifier</td>
+</tr>
+<tr>
+<td><strong>G5 Value</strong></td>
+<td>Is it worth the total investment?</td>
+<td>Price, alternatives, "why not DIY?"</td>
+<td>Real proof, clear scope, honest alternatives</td>
+<td>Inflated ROI, hidden price</td>
+<td>Story, Clarifier</td>
+</tr>
+<tr>
+<td><strong>G6 Identity</strong></td>
+<td>Is this the right decision for us?</td>
+<td>Approvals, ownership, final reservations</td>
+<td>Precise recap, explicit responsibilities, space</td>
+<td>Identity pressure, bypassing approvers</td>
+<td>Mirror, Clarifier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remember:</strong> gates can be passed before the DM (via content and profile) and can reopen (gate regression). Use the earliest open gate that blocks the next step. One primary trust job per touch, while answering every material question honestly.</p></section>
+<section class="chapter appendix"><h1 id="appendix-c-trust-utility-worksheet">Appendix C: Trust Utility Worksheet</h1>
+<p><strong>Trust Utility = P(outcome) × Value − Perceived Risk.</strong> A qualitative diagnostic. Never compute a number.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Rating (strong / weak / unknown)</th>
+<th>Evidence from this conversation</th>
+<th>What's still unknown?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P(outcome):</strong> can it work <em>for them</em>?</td>
+<td></td>
+<td></td>
+<td>Capability, mechanism, fit or implementation?</td>
+</tr>
+<tr>
+<td><strong>Value:</strong> does it matter to them, now?</td>
+<td></td>
+<td></td>
+<td>Compared with what?</td>
+</tr>
+<tr>
+<td><strong>Perceived risk:</strong> what might they lose or have to put in?</td>
+<td></td>
+<td></td>
+<td>Information gap, or a real constraint?</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Likely bottleneck:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong></li>
+<li><strong>A question that would test it:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong></li>
+<li><strong>A proportionate signal or scope change:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong></li>
+<li><strong>An alternative that may serve them better:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong></li>
+<li><strong>What would justify pausing or declining?</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong></li>
+</ul>
+<p><strong>Calculation discipline:</strong> if the buyer gives you numbers, record the source and assumptions and calculate only what the inputs support. Five unsuitable 30-minute calls = 2.5 hours in calls, not 2.5 hours of recoverable profit. Keep capacity freed, potential revenue, signed value and cash collected separate.</p></section>
+<section class="chapter appendix"><h1 id="appendix-d-five-trust-moves-matrix">Appendix D: Five Trust Moves Matrix</h1>
+<table>
+<thead>
+<tr>
+<th>Move</th>
+<th>Purpose</th>
+<th>Use when</th>
+<th>Best gates</th>
+<th>Misuse to catch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mirror</strong></td>
+<td>Make understanding visible and correctable</td>
+<td>Hesitation, feeling misunderstood, resistance</td>
+<td>G3, G6</td>
+<td>Invented emotion; mechanical repetition; "…which is why you need us"</td>
+</tr>
+<tr>
+<td><strong>Clarifier</strong></td>
+<td>Reduce a specific ambiguity</td>
+<td>Process, terms, scope or next step unclear</td>
+<td>G1, G2, G4, G5</td>
+<td>Lectures; jargon; limits buried at the end</td>
+</tr>
+<tr>
+<td><strong>Insight Gift</strong></td>
+<td>A useful, bounded way to see the issue</td>
+<td>Curiosity; control resistance; they need evidence of thinking</td>
+<td>G2, G3</td>
+<td>Baited gifts; implied debt; speculative full audits</td>
+</tr>
+<tr>
+<td><strong>Story</strong></td>
+<td>Ground a mechanism or trade-off</td>
+<td>They can't picture how it works</td>
+<td>G5</td>
+<td>Fabricated proof; irrelevant success stories</td>
+</tr>
+<tr>
+<td><strong>Self-Disclosure</strong></td>
+<td>State a relevant truth or limit</td>
+<td>Skepticism from polished language</td>
+<td>G1, G3</td>
+<td>Manufactured vulnerability; asking for sympathy</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Missing signal:</strong> <strong><em>_</em></strong><strong><em> <strong>Chosen move:</strong> </em></strong><strong><em>_</em></strong> <strong>Why it fits this gate:</strong> <strong><em>_</em></strong><strong><em> <strong>How I'll recognize a misunderstanding:</strong> </em></strong><strong><em>_</em></strong></p></section>
+<section class="chapter appendix"><h1 id="appendix-e-signal-recognition-cheat-sheet">Appendix E: Signal Recognition Cheat Sheet</h1>
+<p><strong>Three different classifications. Don't mix them up.</strong>
+<strong>State</strong> = how they're engaging (Ch 4). <strong>Gate</strong> = what they're deciding (Ch 5). <strong>Rung</strong> = what they're doing (Ch 10).</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Plausible state</th>
+<th>Likely gate</th>
+<th>Ladder rung</th>
+<th>Check before advancing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Like / view</td>
+<td>Unknown</td>
+<td>—</td>
+<td>Attention</td>
+<td>Nothing is established</td>
+</tr>
+<tr>
+<td>"Thanks!"</td>
+<td>Courtesy</td>
+<td>G1–G2</td>
+<td>Attention</td>
+<td>Was any business issue raised?</td>
+</tr>
+<tr>
+<td>"Interesting."</td>
+<td>Curious / polite</td>
+<td>G2</td>
+<td>Curiosity</td>
+<td>Two-Hypothesis Reply</td>
+</tr>
+<tr>
+<td>Questions about the method</td>
+<td>Curious / exploring</td>
+<td>G2–G3</td>
+<td>Interest</td>
+<td>General, or about <em>their</em> situation?</td>
+</tr>
+<tr>
+<td>Detailed context, unprompted</td>
+<td>Exploring</td>
+<td>G3</td>
+<td>Exploration</td>
+<td>Does it show a problem your work fits?</td>
+</tr>
+<tr>
+<td>Questions about proof</td>
+<td>Skeptical / evaluating</td>
+<td>G3–G5</td>
+<td>Exploration</td>
+<td>Which claim or similarity is in doubt?</td>
+</tr>
+<tr>
+<td>Questions about workload or process</td>
+<td>Hesitant / planning</td>
+<td>G4</td>
+<td>Intent</td>
+<td>Is capacity available, or just unclear?</td>
+</tr>
+<tr>
+<td>Questions about price, terms, start</td>
+<td>Evaluating / ready</td>
+<td>G5–G6</td>
+<td>Intent → Readiness</td>
+<td>Who decides? What's still open?</td>
+</tr>
+<tr>
+<td>"I need to think about it."</td>
+<td>Hesitant</td>
+<td>Any</td>
+<td>Varies</td>
+<td>Which TU term? One gentle clarification</td>
+</tr>
+<tr>
+<td>Silence</td>
+<td>Several possible</td>
+<td>—</td>
+<td>—</td>
+<td>What was agreed? Is another contact justified?</td>
+</tr>
+<tr>
+<td>Clear refusal</td>
+<td>A boundary</td>
+<td>—</td>
+<td>—</td>
+<td><strong>Stop.</strong> It's not a hidden buying signal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Confidence labels:</strong> directly stated · strongly suggested · plausible · unknown.</p></section>
+<section class="chapter appendix"><h1 id="appendix-f-conversation-post-mortem">Appendix F: Conversation Post-Mortem</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Before:</strong> what did I think the buyer needed?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Reality:</strong> what did they actually signal?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Gate:</strong> which question was open?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Emotion:</strong> what posture did I infer, and what else was possible?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Trust:</strong> did my moves create or reduce safety?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Risk:</strong> what risk did I increase or decrease?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Signal:</strong> what did I establish?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Mistake:</strong> where did I move too quickly?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Next:</strong> what will I do differently?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>One supported lesson:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_ <strong>One change to test:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</p>
+<p>Review wins as carefully as losses. Avoid hindsight stories ("they were never serious") without evidence. Record loss reasons in the buyer's words; if unknown, write "unknown."</p></section>
+<section class="chapter appendix"><h1 id="appendix-g-conversation-rehydration-map">Appendix G: Conversation Rehydration Map</h1>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>If yes</th>
+<th>If no</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Did they ask not to be contacted?</td>
+<td>Stop. Keep the boundary.</td>
+<td>Keep checking. No refusal isn't permission.</td>
+</tr>
+<tr>
+<td>Did they invite a revisit (date or milestone)?</td>
+<td>Return when it's met.</td>
+<td>Look for material new context; elapsed time is weak.</td>
+</tr>
+<tr>
+<td>Is the new context genuinely connected?</td>
+<td>Name it briefly.</td>
+<td>Don't invent a reason.</td>
+</tr>
+<tr>
+<td>Can the message be low-effort and easy to decline?</td>
+<td>Small status question or relevant update.</td>
+<td>Shrink the ask, or don't send.</td>
+</tr>
+<tr>
+<td>Do they decline or leave no next step?</td>
+<td>Close the record.</td>
+<td>Record the new agreement.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Draft from memory, not pretense:</strong>
+What we actually discussed: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_ What was agreed about future contact: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_
+Why a return is relevant now: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_ Smallest useful question: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_ Stopping point after this: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</p>
+<p><strong>Five qualities of a good rehydration:</strong> contextual · low-pressure · relevant · easy to ignore · consistent in tone.</p></section>
+<section class="chapter appendix"><h1 id="appendix-h-modality-readiness-checklist">Appendix H: Modality Readiness Checklist</h1>
+<ul>
+<li>☐ I can say which question this format resolves better than text.</li>
+<li>☐ The buyer asked for or agreed to the format.</li>
+<li>☐ Length and preparation are proportionate.</li>
+<li>☐ A written alternative exists where needed.</li>
+<li>☐ Nothing sensitive is on screen or in the recording.</li>
+<li>☐ Any recording is agreed before it starts.</li>
+<li>☐ For calls: purpose, participants, time zone and output are clear.</li>
+<li>☐ Material promises will be confirmed in writing.</li>
+<li>☐ Declining the format won't become a reason to pressure them.</li>
+</ul>
+<p><strong>Coherence Check before any escalation:</strong> Profile ✓ · Content ✓ · Conversation tone ✓ · Offer follows the problem ✓ · Format fits trust level ✓ · Promise believable ✓</p>
+<p><em>Text → voice → video → call is not a mandatory ladder. Use the lowest-friction format that supports an accurate decision.</em></p></section>
+<section class="chapter appendix"><h1 id="appendix-i-30-day-sprint-tracker">Appendix I: 30-Day Sprint Tracker</h1>
+<table>
+<thead>
+<tr>
+<th>Days</th>
+<th>Focus</th>
+<th>Done / evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Baseline: substantive replies, volunteered context, open promises, dead-end records</td>
+<td></td>
+</tr>
+<tr>
+<td>1–3</td>
+<td>Baseline, fact vs. inference, Trust Graph Audit</td>
+<td></td>
+</tr>
+<tr>
+<td>4–7</td>
+<td>States, gates, Trust Utility, weekly review</td>
+<td></td>
+</tr>
+<tr>
+<td>8–10</td>
+<td>Promises, stop conditions, profile</td>
+<td></td>
+</tr>
+<tr>
+<td>11–14</td>
+<td>Offer clarity, trust tax, honest correction, coherence</td>
+<td></td>
+</tr>
+<tr>
+<td>15–17</td>
+<td>Mirror, Clarifier, Insight Gift</td>
+<td></td>
+</tr>
+<tr>
+<td>18–21</td>
+<td>Story, Self-Disclosure, one trust job, TRUST Loop</td>
+<td></td>
+</tr>
+<tr>
+<td>22–24</td>
+<td>Content bridge, modality, offer transition</td>
+<td></td>
+</tr>
+<tr>
+<td>25–28</td>
+<td>Objections, rehydration, proposal, delivery handoff</td>
+<td></td>
+</tr>
+<tr>
+<td>29–30</td>
+<td>Post-mortems and next cycle</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Daily reflection:</strong> What I observed · What I first assumed · What I did (including a justified pause) · What changed / stayed unknown · Metric · Tomorrow's adjustment.</p></section>
+<section class="chapter appendix"><h1 id="appendix-j-daily-linkedin-dm-operating-system">Appendix J: Daily LinkedIn DM Operating System</h1>
+<p><strong>Scan → Sort → Diagnose → Choose → Move → Record → Rehydrate</strong></p>
+<p><strong>Priority:</strong> my promises → meaningful replies → justified follow-ups → rehydration → new outreach.
+<strong>Time box:</strong> 30–45 minutes. Never a sending quota.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scan</td>
+<td>What did buyers actually say or do? What did I promise?</td>
+</tr>
+<tr>
+<td>Sort</td>
+<td>Which state is each thread in? (evaluation · exploring · promised · invited revisit · peer · dormant · inactive · do-not-contact)</td>
+</tr>
+<tr>
+<td>Diagnose</td>
+<td>Which state, gate and weakest TU term?</td>
+</tr>
+<tr>
+<td>Choose</td>
+<td>Which signal is missing, and which move supplies it (or pause)?</td>
+</tr>
+<tr>
+<td>Move</td>
+<td>One primary job, the right format</td>
+</tr>
+<tr>
+<td>Record</td>
+<td>What changed? Next action or stop condition?</td>
+</tr>
+<tr>
+<td>Rehydrate</td>
+<td>Is there an invited trigger or genuine new context?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Trust Graph Audit row:</strong> Person · Relationship type · Last meaningful exchange + date · What's established · What's open · What I promised · Permitted next action or stop.</p>
+<p><strong>Weekly review:</strong> unique contacts · unique replies (refusals separate) · substantive conversations · qualified · evaluations · proposals · outcomes · time spent. Counts next to percentages. One change per week.</p></section>
+<section class="chapter appendix"><h1 id="appendix-k-common-trust-leaking-behaviors">Appendix K: Common Trust-Leaking Behaviors</h1>
+<table>
+<thead>
+<tr>
+<th>Trust leak</th>
+<th>Corrective action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fabricated familiarity</td>
+<td>State the real relationship and why you're contacting them</td>
+</tr>
+<tr>
+<td>Generic praise before a pitch</td>
+<td>Use a relevant observation, or drop the praise</td>
+</tr>
+<tr>
+<td>Diagnosing from a public clue</td>
+<td>Separate the fact, the hypothesis and the question</td>
+</tr>
+<tr>
+<td>Overloaded first message</td>
+<td>One reason to talk, one manageable response</td>
+</tr>
+<tr>
+<td>"What's your biggest challenge?"</td>
+<td>Ask about one observable situation</td>
+</tr>
+<tr>
+<td>Treating "thanks" as intent</td>
+<td>Distinguish courtesy, interest, problem and evaluation</td>
+</tr>
+<tr>
+<td>Interrogation (budget, authority, revenue at once)</td>
+<td>Explain why a detail matters; ask in proportion</td>
+</tr>
+<tr>
+<td>Free full engagement before fit</td>
+<td>Bounded contribution; paid diagnosis for real investigation</td>
+</tr>
+<tr>
+<td>Hiding price to protect the meeting</td>
+<td>State price, range or pricing drivers</td>
+</tr>
+<tr>
+<td>Manufactured urgency or scarcity</td>
+<td>Use real timing and real constraints only</td>
+</tr>
+<tr>
+<td>Following the sequence, not the conversation</td>
+<td>Let the live thread override the plan</td>
+</tr>
+<tr>
+<td>Unrequested audit or long video</td>
+<td>Ask first; keep it bounded</td>
+</tr>
+<tr>
+<td>Surprise meeting, participants or recording</td>
+<td>Agree format, purpose and conditions first</td>
+</tr>
+<tr>
+<td>Identity pressure ("serious founders invest")</td>
+<td>Let the buyer's own criteria decide</td>
+</tr>
+<tr>
+<td><strong>Hiding</strong>: no clear offer for a ready buyer</td>
+<td>Recap → reason → request, with price</td>
+</tr>
+<tr>
+<td>Irrelevant or exaggerated proof</td>
+<td>Explain the mechanism and the limits of comparability</td>
+</tr>
+<tr>
+<td>Sounding unlike yourself ("crushing it," "quick brain-pick")</td>
+<td>Read it aloud; say it like a respected professional would</td>
+</tr>
+<tr>
+<td>Guilt-based close-outs</td>
+<td>Close respectfully, once</td>
+</tr>
+<tr>
+<td>Contacting after a no</td>
+<td>Stop. Never switch channel or person to get around it</td>
+</tr>
+<tr>
+<td>Promises lost in delivery</td>
+<td>Transfer scope, dependencies and commitments explicitly</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The ethical floor:</strong> no faked compliments, manufactured urgency, exploited vulnerability, false scarcity, fabricated proof, implied endorsements or fake personalization. Trust is not a technique for bypassing consent.</p></section>
+<section class="chapter cta-page"><h1 id="what-s-next">What's Next</h1>
+<div class="cta-grid">
+<div class="cta-text">
+<h3>Put the system to work</h3>
+<p>Your Complete Edition includes the <strong>Implementation System</strong>:</p>
+<ul>
+<li><strong>Trust Graph Tracker:</strong> the dashboard, audit, sprint log and weekly metrics with honest denominators, ready to use.</li>
+<li><strong>AI Thread Debugger:</strong> paste any DM thread and get a diagnosis using this book's method: state, gate, TU, missing signal, smallest move and what <em>not</em> to do.</li>
+<li><strong>Printable Field Kit:</strong> every worksheet in the appendices, formatted for daily use.</li>
+</ul>
+<h3>Want trust-led outbound run for your B2B business?</h3>
+<p>At <strong>ThriveXLabs</strong>, I build and run outbound-led sales systems for B2B companies: signal-based targeting, conversations run with the method in this book, and measurement that doesn't hide behind reply rates.</p>
+<p><strong>Find everything at <a href="https://revops.eden.so/">revops.eden.so</a></strong></p>
+</div>
+<div class="cta-qr"><svg class="qr" width="29mm" height="29mm" version="1.1" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg"><path d="M2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM5,2H6V3H5zM6,2H7V3H6zM7,2H8V3H7zM8,2H9V3H8zM11,2H12V3H11zM12,2H13V3H12zM18,2H19V3H18zM20,2H21V3H20zM21,2H22V3H21zM22,2H23V3H22zM23,2H24V3H23zM24,2H25V3H24zM25,2H26V3H25zM26,2H27V3H26zM2,3H3V4H2zM8,3H9V4H8zM11,3H12V4H11zM14,3H15V4H14zM16,3H17V4H16zM17,3H18V4H17zM20,3H21V4H20zM26,3H27V4H26zM2,4H3V5H2zM4,4H5V5H4zM5,4H6V5H5zM6,4H7V5H6zM8,4H9V5H8zM10,4H11V5H10zM12,4H13V5H12zM16,4H17V5H16zM17,4H18V5H17zM18,4H19V5H18zM20,4H21V5H20zM22,4H23V5H22zM23,4H24V5H23zM24,4H25V5H24zM26,4H27V5H26zM2,5H3V6H2zM4,5H5V6H4zM5,5H6V6H5zM6,5H7V6H6zM8,5H9V6H8zM10,5H11V6H10zM12,5H13V6H12zM14,5H15V6H14zM15,5H16V6H15zM16,5H17V6H16zM17,5H18V6H17zM20,5H21V6H20zM22,5H23V6H22zM23,5H24V6H23zM24,5H25V6H24zM26,5H27V6H26zM2,6H3V7H2zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM12,6H13V7H12zM13,6H14V7H13zM14,6H15V7H14zM15,6H16V7H15zM18,6H19V7H18zM20,6H21V7H20zM22,6H23V7H22zM23,6H24V7H23zM24,6H25V7H24zM26,6H27V7H26zM2,7H3V8H2zM8,7H9V8H8zM10,7H11V8H10zM11,7H12V8H11zM12,7H13V8H12zM14,7H15V8H14zM15,7H16V8H15zM16,7H17V8H16zM17,7H18V8H17zM18,7H19V8H18zM20,7H21V8H20zM26,7H27V8H26zM2,8H3V9H2zM3,8H4V9H3zM4,8H5V9H4zM5,8H6V9H5zM6,8H7V9H6zM7,8H8V9H7zM8,8H9V9H8zM10,8H11V9H10zM12,8H13V9H12zM14,8H15V9H14zM16,8H17V9H16zM18,8H19V9H18zM20,8H21V9H20zM21,8H22V9H21zM22,8H23V9H22zM23,8H24V9H23zM24,8H25V9H24zM25,8H26V9H25zM26,8H27V9H26zM10,9H11V10H10zM11,9H12V10H11zM12,9H13V10H12zM14,9H15V10H14zM17,9H18V10H17zM18,9H19V10H18zM2,10H3V11H2zM4,10H5V11H4zM5,10H6V11H5zM6,10H7V11H6zM7,10H8V11H7zM8,10H9V11H8zM12,10H13V11H12zM15,10H16V11H15zM17,10H18V11H17zM20,10H21V11H20zM21,10H22V11H21zM22,10H23V11H22zM23,10H24V11H23zM24,10H25V11H24zM3,11H4V12H3zM6,11H7V12H6zM7,11H8V12H7zM9,11H10V12H9zM11,11H12V12H11zM12,11H13V12H12zM13,11H14V12H13zM15,11H16V12H15zM18,11H19V12H18zM21,11H22V12H21zM25,11H26V12H25zM3,12H4V13H3zM5,12H6V13H5zM8,12H9V13H8zM11,12H12V13H11zM13,12H14V13H13zM14,12H15V13H14zM15,12H16V13H15zM16,12H17V13H16zM17,12H18V13H17zM19,12H20V13H19zM20,12H21V13H20zM22,12H23V13H22zM23,12H24V13H23zM25,12H26V13H25zM26,12H27V13H26zM4,13H5V14H4zM6,13H7V14H6zM9,13H10V14H9zM14,13H15V14H14zM18,13H19V14H18zM19,13H20V14H19zM20,13H21V14H20zM26,13H27V14H26zM2,14H3V15H2zM3,14H4V15H3zM4,14H5V15H4zM5,14H6V15H5zM6,14H7V15H6zM8,14H9V15H8zM10,14H11V15H10zM11,14H12V15H11zM12,14H13V15H12zM14,14H15V15H14zM15,14H16V15H15zM16,14H17V15H16zM19,14H20V15H19zM20,14H21V15H20zM21,14H22V15H21zM22,14H23V15H22zM24,14H25V15H24zM25,14H26V15H25zM26,14H27V15H26zM2,15H3V16H2zM3,15H4V16H3zM5,15H6V16H5zM6,15H7V16H6zM11,15H12V16H11zM16,15H17V16H16zM19,15H20V16H19zM21,15H22V16H21zM23,15H24V16H23zM25,15H26V16H25zM2,16H3V17H2zM6,16H7V17H6zM8,16H9V17H8zM11,16H12V17H11zM12,16H13V17H12zM13,16H14V17H13zM14,16H15V17H14zM15,16H16V17H15zM17,16H18V17H17zM18,16H19V17H18zM19,16H20V17H19zM20,16H21V17H20zM21,16H22V17H21zM22,16H23V17H22zM23,16H24V17H23zM25,16H26V17H25zM26,16H27V17H26zM2,17H3V18H2zM5,17H6V18H5zM6,17H7V18H6zM7,17H8V18H7zM9,17H10V18H9zM10,17H11V18H10zM11,17H12V18H11zM13,17H14V18H13zM16,17H17V18H16zM21,17H22V18H21zM22,17H23V18H22zM26,17H27V18H26zM2,18H3V19H2zM4,18H5V19H4zM6,18H7V19H6zM7,18H8V19H7zM8,18H9V19H8zM9,18H10V19H9zM12,18H13V19H12zM13,18H14V19H13zM15,18H16V19H15zM16,18H17V19H16zM17,18H18V19H17zM18,18H19V19H18zM19,18H20V19H19zM20,18H21V19H20zM21,18H22V19H21zM22,18H23V19H22zM24,18H25V19H24zM10,19H11V20H10zM14,19H15V20H14zM15,19H16V20H15zM18,19H19V20H18zM22,19H23V20H22zM23,19H24V20H23zM2,20H3V21H2zM3,20H4V21H3zM4,20H5V21H4zM5,20H6V21H5zM6,20H7V21H6zM7,20H8V21H7zM8,20H9V21H8zM15,20H16V21H15zM16,20H17V21H16zM18,20H19V21H18zM20,20H21V21H20zM22,20H23V21H22zM24,20H25V21H24zM25,20H26V21H25zM26,20H27V21H26zM2,21H3V22H2zM8,21H9V22H8zM10,21H11V22H10zM14,21H15V22H14zM16,21H17V22H16zM18,21H19V22H18zM22,21H23V22H22zM23,21H24V22H23zM25,21H26V22H25zM2,22H3V23H2zM4,22H5V23H4zM5,22H6V23H5zM6,22H7V23H6zM8,22H9V23H8zM10,22H11V23H10zM14,22H15V23H14zM15,22H16V23H15zM17,22H18V23H17zM18,22H19V23H18zM19,22H20V23H19zM20,22H21V23H20zM21,22H22V23H21zM22,22H23V23H22zM24,22H25V23H24zM25,22H26V23H25zM26,22H27V23H26zM2,23H3V24H2zM4,23H5V24H4zM5,23H6V24H5zM6,23H7V24H6zM8,23H9V24H8zM10,23H11V24H10zM11,23H12V24H11zM12,23H13V24H12zM15,23H16V24H15zM17,23H18V24H17zM19,23H20V24H19zM20,23H21V24H20zM22,23H23V24H22zM23,23H24V24H23zM24,23H25V24H24zM25,23H26V24H25zM26,23H27V24H26zM2,24H3V25H2zM4,24H5V25H4zM5,24H6V25H5zM6,24H7V25H6zM8,24H9V25H8zM10,24H11V25H10zM12,24H13V25H12zM13,24H14V25H13zM14,24H15V25H14zM15,24H16V25H15zM16,24H17V25H16zM17,24H18V25H17zM23,24H24V25H23zM24,24H25V25H24zM26,24H27V25H26zM2,25H3V26H2zM8,25H9V26H8zM12,25H13V26H12zM13,25H14V26H13zM16,25H17V26H16zM18,25H19V26H18zM19,25H20V26H19zM21,25H22V26H21zM22,25H23V26H22zM23,25H24V26H23zM26,25H27V26H26zM2,26H3V27H2zM3,26H4V27H3zM4,26H5V27H4zM5,26H6V27H5zM6,26H7V27H6zM7,26H8V27H7zM8,26H9V27H8zM10,26H11V27H10zM11,26H12V27H11zM13,26H14V27H13zM14,26H15V27H14zM19,26H20V27H19zM21,26H22V27H21zM22,26H23V27H22zM23,26H24V27H23zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none" /></svg><p>Scan to visit<br><b>revops.eden.so</b></p></div>
+</div></section></main></body></html>

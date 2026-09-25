@@ -1,6 +1,5 @@
 <section class="chapter appendix">
 
-<p class="part">Appendices · Keep These Beside the Inbox</p>
 
 # Appendix A: The Trust Debugger
 
@@ -250,85 +249,5 @@ Why a return is relevant now: ______________________ Smallest useful question: _
 | Promises lost in delivery | Transfer scope, dependencies and commitments explicitly |
 
 **The ethical floor:** no faked compliments, manufactured urgency, exploited vulnerability, false scarcity, fabricated proof, implied endorsements or fake personalization. Trust is not a technique for bypassing consent.
-
-</section>
-
-<section class="chapter appendix">
-
-# Glossary
-
-**3Cs:** Content, Conversations and Conversion Profile, the connected surfaces of the LinkedIn system. Content creates the memory, conversations deepen it, the profile confirms it.
-**Buyer state:** a tentative reading of how someone is engaging with the decision right now. Not a personality label.
-**Coherence Check:** confirming profile, content, conversation, offer, format and promise tell the same story before escalating.
-**Compounding Loop:** useful interactions → better context → better relevance → higher Trust Utility → voluntary movement.
-**Decay Loop:** silence → seller anxiety → more pressure → buyer withdrawal → more silence.
-**Gate / Six Trust Gates:** the sequence of trust questions: Reality, Relevance, Fit, Safety, Value, Identity/Commitment.
-**Gate regression:** a buyer returning to an earlier gate after new information.
-**Hiding:** withholding a clear offer or next step from a buyer who is ready for one.
-**Insight Gift:** a bounded, useful contribution with no implied obligation.
-**Interest Ladder:** attention → curiosity → interest → exploration → intent → readiness.
-**One-Gate Rule:** one touch, one primary trust job, while answering every material question honestly.
-**Pause Test:** "Am I sending this because it helps the buyer, or because I'm uncomfortable with the silence?"
-**Perceived risk:** what the buyer believes they could lose, spend or expose by moving forward.
-**Premature pressure:** a message answering a trust question the buyer hasn't reached yet.
-**Question budget:** how many questions a conversation can bear at its current trust level.
-**Readiness:** practical willingness *and* ability to make a decision, beyond topic interest.
-**Rehydration:** reopening a dormant conversation by restoring its real context, when contact is legitimate.
-**Salesiness Scale:** 0 Human · 1 Helpful · 2 Commercial · 3 Transactional · 4 Pushy · 5 Coercive.
-**Signal / Signal Matching:** observable buyer information; choosing the move that supplies the missing belief.
-**Signal Lag:** the delay between trust forming and trust showing up as action.
-**Trust deposit / withdrawal:** interactions that support or undermine confidence. Not a balance you can cash in.
-**Trust Graph:** the inbox seen as people in different trust states, with memory, history and connections.
-**Trust tax:** avoidable effort or uncertainty introduced by your communication or process.
-**Trust Utility (TU):** P(outcome) × Value − Perceived Risk, a qualitative decision diagnostic.
-**TRUST Loop:** Track the state · Recognize the gate · Understand the risk · Signal the missing belief · Take one step.
-**Two-Hypothesis Reply:** a move chosen to be appropriate under the two most likely readings of an ambiguous signal.
-
-</section>
-
-<section class="chapter cta-page">
-
-# What's Next
-
-<div class="cta-grid" markdown="1">
-<div class="cta-text" markdown="1">
-### Put the system to work
-
-Your Complete Edition includes the **Implementation System**:
-
-- **Trust Graph Tracker:** the dashboard, audit, sprint log and weekly metrics with honest denominators, ready to use.
-- **AI Thread Debugger:** paste any DM thread and get a diagnosis using this book's method: state, gate, TU, missing signal, smallest move and what *not* to do.
-- **Printable Field Kit:** every worksheet in the appendices, formatted for daily use.
-
-### Want trust-led outbound run for your B2B business?
-
-At **ThriveXLabs**, I build and run outbound-led sales systems for B2B companies: signal-based targeting, conversations run with the method in this book, and measurement that doesn't hide behind reply rates.
-
-**Find everything at [revops.eden.so](https://revops.eden.so/)**
-</div>
-<div class="cta-qr">{{QR_STORE}}<p>Scan to visit<br><b>revops.eden.so</b></p></div>
-</div>
-
-</section>
-
-<section class="chapter notes">
-
-# Publication Notes
-
-**About this edition.** *The Non-Salesy DM: A Trust-Led System for Turning LinkedIn Conversations Into Clients Without Pressure, Chasing or Scripts.* Complete Edition. By Mayank Mishra, ThriveXLabs. 2026.
-
-**How to read the models.** Trust Utility, the Six Trust Gates, Signal Matching, the Trust Graph, the TRUST Loop and the 3Cs are this book's organizing framework: practical decision tools, not validated psychological instruments or predictors of individual behavior. Terms such as trust compression, trust decay and trust compounding describe patterns, not laws.
-
-**Examples and numbers.** All named teaching conversations, businesses, prices and outcomes are illustrative unless explicitly identified as real. The author's outbound figures (roughly 500 LinkedIn connection requests a week across a five-person team, with a reply rate of around 30%) come from his own operating experience and describe one business in one period. They are not benchmarks. No invented case is presented as a real client result.
-
-**Platform references.** Review LinkedIn's current policies for your own workflow. This book provides no invitation quotas and no "safe" automation volumes.
-[1] LinkedIn Professional Community Policies: linkedin.com/legal/professional-community-policies
-[2] LinkedIn Help, Prohibited software and extensions: linkedin.com/help/linkedin/answer/a1341387
-
-**Works mentioned.** Alex Hormozi, *$100M Offers*. David Maister, Charles Green and Robert Galford, *The Trusted Advisor*. Chris Voss with Tahl Raz, *Never Split the Difference*.
-
-LinkedIn is a trademark of its owner. This independent publication is not affiliated with or endorsed by LinkedIn. It does not provide legal advice.
-
-© 2026 Mayank Mishra. All rights reserved. Readers may adapt the exercises and message structures for their own business use. Reproduction or resale requires permission.
 
 </section>
