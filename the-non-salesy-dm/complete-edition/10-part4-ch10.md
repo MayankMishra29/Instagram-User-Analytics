@@ -10,7 +10,7 @@ A consultant gets a long, thoughtful reply about a challenge the buyer is facing
 
 The reply was substantive. Her readiness judgment wasn't.
 
-This is the single most expensive misreading in outbound, and it's exactly the gap I lived through: a 30% reply rate that didn't turn into bookings. Replies are interest. Bookings require readiness. The distance between them is where this chapter lives.
+This is the single most expensive misreading in outbound, and it's exactly the gap I lived through: a 46% reply rate that didn't turn into bookings in proportion. Replies are interest. Bookings require readiness. The distance between them is where this chapter lives.
 
 ## The Interest Ladder
 

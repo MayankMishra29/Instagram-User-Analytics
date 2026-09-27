@@ -4,13 +4,13 @@
 
 Most B2B outbound is judged by the wrong number.
 
-This report comes from running LinkedIn outbound at real volume during a 0-to-1 growth sprint for VirtUp, an expert marketplace. A five-person team sent **about 500 connection requests a week**, and **about 30% of people replied**. By the usual standard, that's a success.
+This report comes from running LinkedIn outbound at real volume during a 0-to-1 growth sprint for an expert marketplace, a sprint that took the platform to 12.5k users in three months. A five-person team sent connection requests with personal notes (**30–35% accepted**) and **11,466 cold DMs**, and **46% of those DMs got a reply**. By any usual standard, that's a success.
 
 It wasn't, and the reason is the most important lesson in B2B outbound: **the constraint was never getting replies. It was turning replies into real bookings.** Volume was solved. Conversion wasn't.
 
 <div class="stat-row">
-<div class="stat"><b>~500</b><span>LinkedIn connection requests per week, across a five-person team</span></div>
-<div class="stat"><b>~30%</b><span>reply rate, which looked like success on the dashboard</span></div>
+<div class="stat"><b>11,466</b><span>cold LinkedIn DMs sent by a five-person team</span></div>
+<div class="stat"><b>46%</b><span>reply rate, which looked like success on the dashboard (30–35% of connection requests accepted)</span></div>
 <div class="stat warm"><b>After the reply</b><span>where the real bottleneck was: replies turning into bookings</span></div>
 </div>
 
@@ -36,7 +36,7 @@ The rest of this report explains each finding, the operating model we built from
 
 A reply rate tells you one thing: how many people found your message worth answering. It doesn't tell you how many of them had a problem you solve, were in a position to act, or trusted you enough to take the next step.
 
-At roughly 30%, our reply rate was healthy by any benchmark people usually cite. Our own internal assessment was blunt: **the bottleneck was conversion of replies into real bookings, not more sends.** More volume would only have produced more of the same gap.
+At 46%, our reply rate was far above any benchmark people usually cite. Our own internal assessment was blunt: **the bottleneck was conversion of replies into real bookings, not more sends.** More volume would only have produced more of the same gap.
 
 When we read the threads instead of the dashboard, a pattern showed up again and again:
 
@@ -219,6 +219,6 @@ At **ThriveXLabs**, I build and run outbound-led sales systems for B2B businesse
 <div class="cta-qr">{{QR_STORE}}<p>Scan to visit<br><b>revops.eden.so</b></p></div>
 </div>
 
-<p class="fig">The figures in this report (about 500 LinkedIn connection requests a week across a five-person team, a reply rate of around 30%) come from the author's own operating experience running outbound for one business during one period. They are not benchmarks or promises. Teaching examples are illustrative. LinkedIn is a trademark of its owner; this report is independent. © 2026 Mayank Mishra · ThriveXLabs.</p>
+<p class="fig">The figures in this report (11,466 cold LinkedIn DMs at a 46% reply rate, a 30–35% connection-acceptance rate on requests with notes, and a platform that grew to 12.5k users in three months) come from the author's own operating experience running outbound for one business during one period. They are not benchmarks or promises. Teaching examples are illustrative. LinkedIn is a trademark of its owner; this report is independent. © 2026 Mayank Mishra · ThriveXLabs.</p>
 
 </section>

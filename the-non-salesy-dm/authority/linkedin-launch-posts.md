@@ -6,9 +6,9 @@ Five posts to launch the Field Guide (lead magnet) and build authority for Thriv
 
 ## Post 1: The origin story (launch)
 
-We had a 30% reply rate on LinkedIn outbound.
+We had a 46% reply rate on LinkedIn outbound.
 
-About 500 connection requests a week, across a five-person team.
+11,466 cold DMs. A five-person team. 30–35% of connection requests accepted.
 
 By most outbound advice, that's the job done.
 
@@ -73,7 +73,7 @@ If your outbound agency reports reply rate, ask them what happens next.
 
 Reply rate measures attention. Not readiness.
 
-We ran a 30% reply rate. The bottleneck wasn't getting replies, it was turning them into real bookings.
+We ran a 46% reply rate across 11,466 DMs. The bottleneck wasn't getting replies, it was turning them into real bookings.
 
 Here's what I'd ask anyone running outbound for you:
 

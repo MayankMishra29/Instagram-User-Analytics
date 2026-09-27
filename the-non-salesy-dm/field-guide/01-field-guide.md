@@ -1,10 +1,10 @@
 <section class="frontmatter">
 
-# Why I Wrote This: 500 Requests a Week, and the Wrong Problem
+# Why I Wrote This: 11,466 DMs, a 46% Reply Rate, and the Wrong Problem
 
-For a stretch of this year I ran LinkedIn outbound for VirtUp, an expert marketplace. A five-person team sent about **500 connection requests a week**, and about **30% of people replied**.
+For a stretch of this year I ran growth for an expert marketplace, a sprint that took the platform to **12.5k users in three months**. A five-person team sent connection requests with personal notes (**30–35% accepted**) and **11,466 cold LinkedIn DMs**. **46% got a reply.**
 
-That reply rate is the number people screenshot. By most outbound advice, the job was done.
+A 46% reply rate is the number people screenshot. By most outbound advice, the job was done.
 
 It wasn't. The replies weren't turning into real bookings in anything like the proportion the reply rate promised. **Volume wasn't the bottleneck. What happened after the reply was.**
 
@@ -248,7 +248,7 @@ This is the whole method in five steps. On a normal reply it takes about thirty 
 
 # 6. Interest Is Not Readiness
 
-This is the gap I lived through at a 30% reply rate. **Replies are interest. Bookings need readiness.**
+This is the gap I lived through at a 46% reply rate. **Replies are interest. Bookings need readiness.**
 
 <div class="ladder">
 <div><b>Readiness</b><span>"We have approval. What do you need to start?"</span></div>

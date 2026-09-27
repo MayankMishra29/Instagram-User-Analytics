@@ -1,23 +1,25 @@
 # Eden Setup Plan + Editor Notes
 
-## A. Decisions needed before publishing
+## A. Status (updated)
 
-### 1. Outbound numbers conflict (blocking)
-- **In the books (from your VirtUp internal notes):** about 500 LinkedIn connection requests a week across a five-person team, reply rate around 30%. Replies-to-bookings was the bottleneck.
-- **On your Eden creator page (public):** "Built VirtUp to 12.5k users in 3 months and a 46% reply rate from 11,466 cold DMs."
-- Both can be true (different denominators, periods or channels), but a reader who sees 46% on the store page and 30% in the book will notice. For a book about coherence, that's a trust leak. **Tell me which figures are right and how they relate.** Swapping them is a quick find-and-replace plus a rebuild.
-- Where the numbers appear: `complete-edition/00-front-matter.md`, `02-part1-ch01.md`, `08-ch08.md`, `10-part4-ch10.md`, `13-part5-ch14.md`, `15-appendices.md` (Publication Notes); `field-guide/01-field-guide.md`; `authority/01-field-report.md`; `authority/linkedin-launch-posts.md`.
+**Numbers (confirmed by you):** 11,466 cold LinkedIn DMs at a 46% reply rate; 30–35% acceptance on connection requests with notes; a platform that grew to 12.5k users in 3 months. Applied across every edition, the launch posts and the Eden page copy. The book now describes the business as "an expert marketplace" rather than naming it.
 
-### 2. Facts to verify
-- Bio line "business consulting, product marketing and building education businesses" (it came from the ChatGPT draft).
-- Naming **VirtUp** publicly, and describing your role as "ran outbound … as part of a 0-to-1 growth sprint." Swap for "an expert marketplace" if you'd rather not name it.
-- The "no-code/AI automation niche had the worst reply rate" and "20K+ follower accounts converted poorly" claims (both from your internal VirtUp notes).
-- The booking-link-in-a-post story is the "Nino" proof point. The expert isn't named in the books.
-- **Automation coherence risk:** your VirtUp stack referenced tools like PhantomBuster/GetSales. The books cite LinkedIn's policy against unauthorized automation and don't describe your tooling. Make sure nothing you say publicly contradicts that.
-- LinkedIn policy links in the Publication Notes: open both and confirm they still resolve.
+**Eden drafts created (not published):**
+| Product | Price | Editor |
+|---|---|---|
+| The Non-Salesy DM: Free Field Guide (digital download) | Free | https://app.eden.so/store/products/5c24cda6-692a-4808-999d-dad71322ed08?workspace=39ff56d3-799b-42d6-9b8e-1066be04758c |
+| The Non-Salesy DM: Complete Edition + Thread Debugger AI (Custom AI) | $49 | https://app.eden.so/store/products/42e39682-1f46-46c6-ae55-48817d55ab24?workspace=39ff56d3-799b-42d6-9b8e-1066be04758c |
+| Reply Rates Lie: Trust-Led Outbound Field Report (digital download) | Free | https://app.eden.so/store/products/dc387210-8bfb-4486-8a63-cc9ee02eb486?workspace=39ff56d3-799b-42d6-9b8e-1066be04758c |
 
-### 3. Stripe
-Your store shows **Stripe: not connected**. The paid product can't go live until you connect it at https://app.eden.so/store/storefront. That's a manual step only you can do.
+A "Playbook: The Non-Salesy DM method reference" note in your Eden Library powers the Thread Debugger. It's hidden from buyers.
+
+**Your remaining steps:**
+1. Upload files in each product's Files step: Field Guide PDF → product 1; Complete Edition PDF, Field Kit PDF and Trust-Graph-Tracker.xlsx → product 2 (set to downloadable); Field Report PDF → product 3.
+2. Connect Stripe (Storefront) before the $49 product can go live.
+3. Optional: add a cover or hero image (1200×630) for each.
+4. Tell me when you want them published, and I'll publish and order them on your creator page.
+
+**Still worth verifying:** the bio line "business consulting, product marketing and building education businesses"; the niche and follower-count observations; that nothing public contradicts the book's no-automation stance; that the two LinkedIn policy links still resolve.
 
 ## B. Proposed Eden products (all created as drafts; nothing published without your go-ahead)
 

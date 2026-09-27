@@ -319,7 +319,7 @@ At **ThriveXLabs**, I build and run outbound-led sales systems for B2B companies
 
 **How to read the models.** Trust Utility, the Six Trust Gates, Signal Matching, the Trust Graph, the TRUST Loop and the 3Cs are this book's organizing framework: practical decision tools, not validated psychological instruments or predictors of individual behavior. Terms such as trust compression, trust decay and trust compounding describe patterns, not laws.
 
-**Examples and numbers.** All named teaching conversations, businesses, prices and outcomes are illustrative unless explicitly identified as real. The author's outbound figures (roughly 500 LinkedIn connection requests a week across a five-person team, with a reply rate of around 30%) come from his own operating experience and describe one business in one period. They are not benchmarks. No invented case is presented as a real client result.
+**Examples and numbers.** All named teaching conversations, businesses, prices and outcomes are illustrative unless explicitly identified as real. The author's outbound figures (11,466 cold LinkedIn DMs at a 46% reply rate, a 30–35% connection-acceptance rate on requests with notes, and a platform that grew to 12.5k users in three months) come from his own operating experience and describe one business in one period. They are not benchmarks. No invented case is presented as a real client result.
 
 **Platform references.** Review LinkedIn's current policies for your own workflow. This book provides no invitation quotas and no "safe" automation volumes.
 [1] LinkedIn Professional Community Policies: linkedin.com/legal/professional-community-policies

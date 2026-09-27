@@ -177,7 +177,7 @@ Pull your last 10 sent DMs. For each one:
 
 Most people find their problem isn't a personality. It's a pattern: they're consistently one or two gates ahead of the buyer.
 
-**Stop:** disguising a pitch with friendly wording. **Start:** checking whether each request has earned its place. **Notice:** when the buyer's answer contradicts your planned direction. **Measure:** fewer messages containing unsupported diagnoses or uninvited escalations. Count the errors. Don't assume a higher reply rate proves more trust. I've seen a 30% reply rate sitting on top of a conversion problem.
+**Stop:** disguising a pitch with friendly wording. **Start:** checking whether each request has earned its place. **Notice:** when the buyer's answer contradicts your planned direction. **Measure:** fewer messages containing unsupported diagnoses or uninvited escalations. Count the errors. Don't assume a higher reply rate proves more trust. I've seen a 46% reply rate sitting on top of a conversion problem.
 
 <div class="rule">Field rule: If you can't explain why the buyer needs your next message, don't send it yet.</div>
 

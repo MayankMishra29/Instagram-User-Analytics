@@ -128,7 +128,7 @@ Never add a numeric "trust score." "Reviewed sample; asked about team workload" 
 
 ## Measure what matters: leading and lagging
 
-If you only measure booked calls, you'll reward the behaviors that damage trust: pushing for calls early, ignoring readiness, counting a meeting as progress. I learned this the hard way. A 30% reply rate looked like success on a dashboard while the real bottleneck, replies turning into bookings, sat underneath it.
+If you only measure booked calls, you'll reward the behaviors that damage trust: pushing for calls early, ignoring readiness, counting a meeting as progress. I learned this the hard way. A 46% reply rate looked like success on a dashboard while the real bottleneck, replies turning into bookings, sat underneath it.
 
 | **Leading indicators** (weekly) | **Lagging indicators** (monthly/quarterly) |
 |---|---|

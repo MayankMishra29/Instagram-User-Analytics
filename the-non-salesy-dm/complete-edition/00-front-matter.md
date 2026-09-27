@@ -2,19 +2,19 @@
 
 # About the Author
 
-**Mayank Mishra** is the founder of ThriveXLabs (TXL), where he builds and runs outbound-led sales systems for B2B businesses. His work spans business consulting, product marketing and building education businesses. He has run LinkedIn outbound at real volume: a team sending roughly 500 connection requests a week, with reply rates around 30%. That was where he learned the lesson this book is built on: getting replies is the easy part.
+**Mayank Mishra** is the founder of ThriveXLabs (TXL), where he builds and runs outbound-led sales systems for B2B businesses. His work spans business consulting, product marketing and building education businesses. He has run LinkedIn outbound at real volume: 11,466 cold DMs at a 46% reply rate, for an expert marketplace that grew to 12.5k users in three months. That was where he learned the lesson this book is built on: getting replies is the easy part.
 
 </section>
 
 <section class="frontmatter">
 
-# My Story: 500 Requests a Week, and the Wrong Problem
+# My Story: 11,466 DMs, a 46% Reply Rate, and the Wrong Problem
 
 I'll start with the numbers, because they're the reason this book exists.
 
-For a stretch of this year I ran outbound for VirtUp, an expert marketplace, as part of a 0-to-1 growth sprint. We weren't dabbling. A five-person outbound team was sending about **500 LinkedIn connection requests every week**, and about **30% of people replied**.
+For a stretch of this year I ran growth for an expert marketplace, a 0-to-1 sprint that took the platform to **12.5k users in three months**. Outbound was a big part of it, and we weren't dabbling. A five-person team sent connection requests with personal notes (**30–35% were accepted**) and, in total, **11,466 cold LinkedIn DMs**. **46% of them got a reply.**
 
-If you've ever run outbound, you know that reply rate is good. It's the number people post screenshots of. It's the number agencies put on their sales pages. By the standards of most outbound advice, the job was done: we'd solved the "getting attention" problem.
+If you've ever run outbound, you know a 46% reply rate is exceptional. It's the number people post screenshots of. It's the number agencies put on their sales pages. By the standards of most outbound advice, the job was done: we'd solved the "getting attention" problem.
 
 We hadn't solved anything.
 
