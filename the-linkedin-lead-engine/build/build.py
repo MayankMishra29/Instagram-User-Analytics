@@ -69,7 +69,7 @@ def render_body(src_dir: Path):
     md = markdown.Markdown(extensions=["tables", "md_in_html", "attr_list", "sane_lists", "nl2br"])
     parts = []
     section_re = re.compile(r"<section([^>]*)>(.*?)</section>", re.S)
-    for f in sorted(src_dir.glob("*.md")):
+    for f in sorted(src_dir.glob("[0-9]*.md")):
         text = f.read_text()
         sections = section_re.findall(text) or [("", text)]
         for attrs, inner in sections:
