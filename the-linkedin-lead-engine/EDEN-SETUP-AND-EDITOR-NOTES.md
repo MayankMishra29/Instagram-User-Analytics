@@ -5,9 +5,9 @@
 | Version | Output |
 |---|---|
 | Free Field Guide (lead magnet) | `dist/The-LinkedIn-Lead-Engine-Field-Guide.pdf` (12 pp) |
-| Complete Edition (paid) | `dist/The-LinkedIn-Lead-Engine-Complete-Edition.pdf` (92 pp) |
+| Complete Edition (paid) | `dist/The-LinkedIn-Lead-Engine-Complete-Edition.pdf` (96 pp) |
 | Implementation System | `system/Content-Engine-Tracker.xlsx`, `system/AI-Post-Coach.md`, `dist/The-LinkedIn-Lead-Engine-Field-Kit.pdf` |
-| Authority asset | `dist/B2B-LinkedIn-Pipeline-Audit.pdf` (10 pp), `authority/linkedin-launch-posts.md` |
+| Authority asset | `dist/B2B-LinkedIn-Pipeline-Audit.pdf` (11 pp), `authority/linkedin-launch-posts.md` |
 
 Rebuild: `python build/build.py all` and `python build/make_tracker.py`.
 
@@ -39,3 +39,9 @@ A "Playbook: The LinkedIn Lead Engine method reference" note powers the Post Coa
 - **Bundle the two paid books.** They're two halves of one system (content starts conversations; the DM book handles them). I'd propose "The LinkedIn Client System" at about $79 against $98 separately, created as an Eden bundle draft on your go-ahead. Eden computes the crossed-out price automatically from the real individual prices, so it isn't a fake anchor.
 - **Lead-magnet routing.** Field Guide (Lead Engine) → Complete Edition → bundle. The Pipeline Audit and the "Reply Rates Lie" report are the B2B-buyer entry points for TXL services.
 - **Credibility gap to close over time:** a content book sells better when the author's own feed shows the engine working. Consider running the 30-day challenge publicly and adding a real case chapter in v1.1.
+
+## Bundle + marketing (added)
+- **Bundle draft created:** The LinkedIn Client System, $79 (both Complete Editions; Eden shows the $98 combined price). Editor: https://app.eden.so/store/bundles/b8d46277-835b-41f7-ac34-93b88af85870. Publishing is blocked until both paid products are live.
+- **All PDFs were rebranded** (ink/cream/red covers and interiors). Re-upload every file in `dist/` to its Eden product, replacing earlier uploads.
+- **Product images:** use `marketing/images/hero-*.png` (1200x630) and `cover-*.png`.
+- **Launch copy:** `marketing/linkedin-image-posts.md` and `marketing/book-post-library.md`.

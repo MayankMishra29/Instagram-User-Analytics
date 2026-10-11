@@ -1,0 +1,51 @@
+/* Brand override for book interiors: ink / cream / signal red, Bebas + DM Serif + DM Sans. */
+:root {
+  --ink: #0E0D0C; --ink-soft: #3d3934; --muted: #6E675E; --line: #D9D0C2; --paper: #ffffff; --tint: #F7F3EC;
+  --accent: #0E0D0C; --accent-soft: #EFE8DC; --warm: #D7261E; --warm-soft: #FBEDEA;
+  --sans: 'DM Sans', 'Liberation Sans', Arial, sans-serif; --serif: 'DM Sans', 'Liberation Sans', Arial, sans-serif;
+}
+body { font-size: 10.6pt; line-height: 1.6; color: var(--ink); }
+h1 { font-family: 'Bebas Neue', var(--sans); font-weight: 400; font-size: 38pt; line-height: .95; letter-spacing: .01em; }
+h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 17pt; color: var(--ink); }
+h3 { font-family: var(--sans); font-weight: 700; }
+.toc h2 { font-family: 'Bebas Neue'; font-size: 34pt; }
+.part { font-family: 'JetBrains Mono', monospace; color: var(--warm); letter-spacing: .18em; }
+.lede { font-family: 'DM Serif Display', Georgia, serif; font-size: 15pt; color: var(--ink-soft); border-left-color: var(--warm); }
+th { background: var(--ink); }
+.annot th { background: #3d3934; }
+.table-caption { color: var(--ink); font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; letter-spacing: .12em; text-transform: uppercase; font-weight: 400; }
+.rule { background: var(--ink); color: var(--accent-soft); font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 13pt; border-left: 5px solid var(--warm); }
+.gate-rule { background: var(--accent-soft); color: var(--ink); }
+.thread { background: var(--tint); border-color: var(--line); }
+.thread strong { color: var(--warm); }
+.sidebar { background: var(--tint); border-color: var(--line); }
+.sidebar p:first-child strong { color: var(--warm); }
+.example { background: var(--tint); border-left-color: var(--ink); }
+.flow span { background: var(--accent-soft); border-color: var(--line); }
+.flow.loop span { background: var(--tint); border-color: var(--line); }
+.flow span:not(:last-child)::after, .flow.loop span:last-child::after { color: var(--warm); }
+.sm-box { background: var(--accent-soft); border-color: var(--line); }
+.sm-box b { color: var(--ink); }
+.sm-wide { background: var(--ink); border-color: var(--ink); }
+.sm-wide b { color: #F0B9A4; }
+.gate, .gate:nth-child(2), .gate:nth-child(3), .gate:nth-child(4), .gate:nth-child(5) { background: var(--accent-soft); color: var(--ink); border: 1px solid var(--line); }
+.gate:nth-child(6) { background: var(--ink); color: var(--accent-soft); }
+.gate b { font-family: 'Bebas Neue'; font-size: 13pt; font-weight: 400; letter-spacing: .02em; }
+.equation { border-color: var(--ink); }
+.eq-main span { color: var(--warm); }
+.eq-parts div { background: var(--tint); }
+.risk-grid span { background: var(--tint); border-color: var(--line); }
+.g-node { background: var(--accent-soft); border-color: var(--line); }
+.g-hot { background: #FBEDEA; border-color: #E9B4AE; } .g-cool { background: var(--tint); border-color: var(--line); } .g-stop { background: var(--ink); }
+.trust-loop div { background: var(--tint); border-top-color: var(--warm); }
+.trust-loop b { color: var(--warm); font-family: 'Bebas Neue'; font-weight: 400; font-size: 20pt; }
+.moves div { background: var(--ink); }
+.moves b { color: var(--accent-soft); font-family: 'Bebas Neue'; font-weight: 400; font-size: 13pt; letter-spacing: .03em; }
+.ladder div:nth-child(1) { background: var(--ink); } .ladder div:nth-child(2) { background: #3d3934; } .ladder div:nth-child(3) { background: #6E675E; }
+.ladder div:nth-child(4) { background: #B9AFA1; color: var(--ink); } .ladder div:nth-child(5) { background: #D9D0C2; color: var(--ink); } .ladder div:nth-child(6) { background: #EFE8DC; color: var(--ink); }
+.nested { border-color: var(--ink); } .nested .inner { background: var(--warm); }
+.sprint div { background: var(--accent-soft); border-color: var(--line); } .sprint div:last-child { background: var(--tint); } .sprint b { color: var(--ink); }
+.cta-banner { background: var(--ink); } .cta-banner strong, .cta-banner a { color: #F0B9A4; }
+.stat { border-top-color: var(--ink); } .stat b { font-family: 'Bebas Neue'; font-weight: 400; font-size: 30pt; } .stat.warm { border-top-color: var(--warm); }
+.post { border-left-color: var(--warm); }
+a { color: var(--warm); }

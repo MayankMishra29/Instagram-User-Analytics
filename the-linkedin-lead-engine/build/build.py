@@ -13,6 +13,9 @@ import qrcode.image.svg
 from playwright.sync_api import sync_playwright
 from pypdf import PdfReader, PdfWriter
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "brand"))
+import brand  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
 STORE_URL = "https://revops.eden.so/"
@@ -26,6 +29,7 @@ EDITIONS = {
         "subtitle": "How to Write LinkedIn Posts That Attract Clients, Not Just Likes",
         "badge": "Complete Edition + Implementation System",
         "toc": True,
+        "cover": dict(key="lle", kicker="Complete Edition + Implementation System"),
     },
     "field-guide": {
         "src": "field-guide",
@@ -34,6 +38,7 @@ EDITIONS = {
         "subtitle": "The Field Guide: Write Posts That Reach the Right People and Start the Right Conversations",
         "badge": "Free Field Guide",
         "toc": True,
+        "cover": dict(key="lle", kicker="Free Field Guide", sub="The Field Guide: Write Posts That Reach the Right People and Start the Right Conversations"),
     },
     "authority": {
         "src": "authority",
@@ -42,6 +47,7 @@ EDITIONS = {
         "subtitle": "A 30-Point Scorecard for Founders and Revenue Leaders: Is Your LinkedIn Presence Producing Pipeline, or Just Posts?",
         "badge": "ThriveXLabs Scorecard",
         "toc": False,
+        "cover": dict(key="lle", kicker="Scorecard", title=["THE B2B", "LINKEDIN", "PIPELINE AUDIT"], accent="Pipeline, or just posts?", sub="A 30-Point Scorecard for Founders and Revenue Leaders", bg=brand.PAPER, fg=brand.INK, vol="B2B SCORECARD"),
     },
     "field-kit": {
         "src": "system/field-kit",
@@ -50,6 +56,7 @@ EDITIONS = {
         "subtitle": "Printable worksheets for The LinkedIn Lead Engine Implementation System",
         "badge": "Implementation System",
         "toc": False,
+        "cover": dict(key="lle", kicker="Implementation System", title=["THE LEAD ENGINE", "FIELD KIT"], accent="Worksheets beside the editor.", sub="Printable worksheets for The LinkedIn Lead Engine"),
     },
 }
 
@@ -92,37 +99,24 @@ def render_body(src_dir: Path):
 def build(key: str):
     ed = EDITIONS[key]
     body, toc = render_body(ROOT / ed["src"])
-    css = (ROOT / "build" / "style.css").read_text()
+    css = brand.fonts_css() + (ROOT / "build" / "style.css").read_text() + (brand.BRAND / "interior.css").read_text()
     toc_html = ""
     if ed["toc"]:
         items = "".join(
             f'<li><a href="#{a}">{t}</a></li>' for a, t in toc if t not in ("Contents",)
         )
         toc_html = f'<section class="toc"><h2>Contents</h2><ol>{items}</ol></section>'
-    cover = f"""
-<section class="cover">
-  <div class="cover-top">THRIVEXLABS</div>
-  <div class="cover-main">
-    <div class="cover-badge">{ed['badge']}</div>
-    <div class="cover-title">{ed['title']}</div>
-    <div class="cover-rule"></div>
-    <div class="cover-sub">{ed['subtitle']}</div>
-  </div>
-  <div class="cover-bottom">
-    <div class="cover-author">Mayank Mishra<span>Founder, ThriveXLabs</span></div>
-    <div class="cover-qr">{qr_svg(STORE_URL)}<span>revops.eden.so</span></div>
-  </div>
-</section>"""
+    cover = brand.cover_inner(**ed["cover"])
     head = f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{ed["title"]}</title><style>{css}</style></head>'
     DIST.mkdir(exist_ok=True)
     stem = Path(ed["out"]).stem
     cover_path = DIST / f"{stem}.cover.html"
-    cover_path.write_text(f'{head}<body class="cover-doc">{cover}</body></html>')
+    cover_path.write_text(brand.page(cover, 816, 1056))
     html_path = DIST / f"{stem}.html"
     html_path.write_text(f"{head}<body>{toc_html}<main>{body}</main></body></html>")
     pdf_path = DIST / ed["out"]
     footer = (
-        '<div style="width:100%;font-family:Liberation Sans,Arial;font-size:8px;color:#8a8f98;'
+        '<div style="width:100%;font-family:JetBrains Mono,monospace;font-size:7px;letter-spacing:1px;color:#6E675E;'
         'padding:0 0.75in;display:flex;justify-content:space-between;">'
         f'<span>{ed["title"]} · ThriveXLabs</span><span class="pageNumber"></span></div>'
     )
@@ -130,7 +124,7 @@ def build(key: str):
         browser = p.chromium.launch(executable_path=CHROMIUM)
         page = browser.new_page()
         page.goto(cover_path.as_uri(), wait_until="load")
-        cover_pdf = page.pdf(format="Letter", print_background=True, margin={"top": "0", "bottom": "0", "left": "0", "right": "0"})
+        cover_pdf = page.pdf(width="8.5in", height="11in", print_background=True, margin={"top": "0", "bottom": "0", "left": "0", "right": "0"})
         page.goto(html_path.as_uri(), wait_until="load")
         body_pdf = page.pdf(
             format="Letter",

@@ -65,3 +65,9 @@ A "Playbook: The Non-Salesy DM method reference" note in your Eden Library power
 3. Create the two free digital-download drafts with the page copy above.
 4. Send you the editor links so you can upload the files.
 5. Publish only when you explicitly say so (Stripe is needed for #2).
+
+## Bundle + marketing (added)
+- **Bundle draft created:** The LinkedIn Client System, $79 (both Complete Editions; Eden shows the $98 combined price). Editor: https://app.eden.so/store/bundles/b8d46277-835b-41f7-ac34-93b88af85870. Publishing is blocked until both paid products are live.
+- **All PDFs were rebranded** (ink/cream/red covers and interiors). Re-upload every file in `dist/` to its Eden product, replacing earlier uploads.
+- **Product images:** use `marketing/images/hero-*.png` (1200x630) and `cover-*.png`.
+- **Launch copy:** `marketing/linkedin-image-posts.md` and `marketing/book-post-library.md`.
